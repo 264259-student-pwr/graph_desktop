@@ -46,10 +46,11 @@ class TestDijkstraAlgorithm(unittest.TestCase):
         self.graph = nx.Graph()
         self.graph.add_edge('A', 'B', weight=1)
         self.graph.add_edge('B', 'C', weight=1)
-        self.graph.add_edge('A', 'C', weight=1)
+        self.graph.add_edge('A', 'C', weight=2)
         path, cost, steps = dijkstra(self.graph, 'A', 'C')
-        self.assertEqual(path, ['A', 'B', 'C'])  # Kolejność węzłów może zależeć od implementacji
+        self.assertIn(path, [['A', 'B', 'C'], ['A', 'C']])  # Akceptujemy obie poprawne ścieżki
         self.assertEqual(cost, 2)
+
 
     def test_large_weights(self):
         """Test dla grafu z dużymi wagami."""

@@ -35,6 +35,9 @@ def dijkstra(graph, start, end):
                 heapq.heappush(priority_queue, (distance, neighbor))
                 steps.append((current_node, neighbor, weight))
 
+    if distances[end] == float('inf'):
+        return [], float('inf'), steps
+
     path = []
     current_node = end
     while current_node is not None:

@@ -120,7 +120,17 @@ class MapVisualizer(FigureCanvas):
     def run_dijkstra(self):
         """Uruchamia algorytm Dijkstry."""
         if not self.start_city or not self.end_city:
-            QMessageBox.warning(self, "Błąd", "Wybierz miasto początkowe i końcowe.")
+            msg_box = QMessageBox(self)
+            msg_box.setIcon(QMessageBox.Warning)
+            msg_box.setWindowTitle("Błąd")
+            msg_box.setText("Wybierz miasto początkowe i końcowe.")
+            
+            # Ustawienie niestandardowej ikony
+            custom_icon_path = "app\\resources\\error.png"
+            msg_box.setWindowIcon(QIcon(custom_icon_path))
+            
+            # Wyświetlenie komunikatu
+            msg_box.exec_()
             return
 
         # Budowa grafu
@@ -273,7 +283,7 @@ class MapVisualizer(FigureCanvas):
         msg.setIcon(QMessageBox.Warning)
         msg.setWindowTitle(title)
         msg.setText(message)
-        custom_icon_path = "app\\resources\\error.png"  # Ścieżka do ikony
+        custom_icon_path = "app\\resources\\error.png" 
         msg.setWindowIcon(QIcon(custom_icon_path))
         msg.exec_()
 

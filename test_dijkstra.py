@@ -29,7 +29,7 @@ class TestDijkstraAlgorithm(unittest.TestCase):
         directed_graph = nx.DiGraph()
         directed_graph.add_edge('A', 'B', weight=1)
         directed_graph.add_edge('B', 'C', weight=2)
-        directed_graph.add_edge('C', 'A', weight=3)  # Skierowana krawędź
+        directed_graph.add_edge('C', 'A', weight=3)
         path, cost, steps = dijkstra(directed_graph, 'A', 'C')
         self.assertEqual(path, ['A', 'B', 'C'])
         self.assertEqual(cost, 3)

@@ -28,6 +28,7 @@ class MainWindow(QMainWindow):
         self.steps_text.setFont(font)
 
         self.next_step_button = QPushButton("Następny krok")
+        self.next_step_button.setFixedSize(1902, 50)
         self.next_step_button.clicked.connect(self.map_visualizer.next_step)
         self.layout.addWidget(self.next_step_button)
 
@@ -101,7 +102,7 @@ class MainWindow(QMainWindow):
             "1. Załaduj mapę, wybierając odpowiedni plik w menu 'Mapy'.\n"
             "2. Kliknij na dwa miasta, aby ustawić punkt początkowy i końcowy.\n"
             "3. Wybierz algorytm w menu 'Narzędzia/Wybierz algorytm'.\n"
-            "4. Przejdź przez kroki algorytmu za pomocą przycisku 'Next Step'.\n"
+            "4. Przejdź przez kroki algorytmu za pomocą przycisku 'Następny krok'.\n"
             "5. Po zakończeniu sprawdź najkrótszą ścieżkę i jej koszt.\n\n"
             "Miłej pracy!"
         )

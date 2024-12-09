@@ -28,7 +28,6 @@ class MainWindow(QMainWindow):
         self.steps_text.setFont(font)
 
         self.next_step_button = QPushButton("Następny krok")
-        self.next_step_button.setFixedSize(1902, 50)
         self.next_step_button.clicked.connect(self.map_visualizer.next_step)
         self.layout.addWidget(self.next_step_button)
 
